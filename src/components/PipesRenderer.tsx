@@ -15,7 +15,7 @@ export const PipesRenderer: React.FC<PipesRendererProps> = ({ pipes, gameDimensi
         id={pipe.id}
         x={pipe.x}
         topHeight={pipe.topHeight}
-        gap={150}
+        gap={180}
         width={50}
         height={gameDimensions.height}
       />

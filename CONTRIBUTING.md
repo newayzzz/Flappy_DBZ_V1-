@@ -98,3 +98,7 @@ Use clear, descriptive commit messages:
 - Review similar projects for inspiration
 
 Thank you for contributing to Flappy Dragon! 🐉
+
+---
+
+Created by Saqeb Newaz

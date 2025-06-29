@@ -21,8 +21,8 @@ export const usePipeSpawner = ({
 
   // Generate a random pipe with safe height constraints
   const generateRandomPipe = useCallback((): Pipe => {
-    const minHeight = 50;
-    const maxHeight = window.innerHeight * 0.6;
+    const minHeight = 80; // Increased minimum height
+    const maxHeight = window.innerHeight * 0.5; // Reduced maximum height for better balance
     const topHeight = Math.random() * (maxHeight - minHeight) + minHeight;
     
     return {
@@ -35,9 +35,19 @@ export const usePipeSpawner = ({
   // Spawn new pipes at regular intervals
   useEffect(() => {
     if (gameStarted && !gameOver) {
-      timerRef.current = setInterval(() => {
-        setPipes(prev => [...prev, generateRandomPipe()]);
-      }, spawnInterval);
+      // Add initial delay before first pipe
+      const initialDelay = setTimeout(() => {
+        timerRef.current = setInterval(() => {
+          setPipes(prev => [...prev, generateRandomPipe()]);
+        }, spawnInterval);
+      }, 2000); // 2 second delay before first pipe
+
+      return () => {
+        clearTimeout(initialDelay);
+        if (timerRef.current) {
+          clearInterval(timerRef.current);
+        }
+      };
     }
 
     return () => {
@@ -70,4 +80,11 @@ export const usePipeSpawner = ({
       }
     };
   }, [gameStarted, gameOver, movePipes]);
+
+  // Clean up pipes when game resets
+  useEffect(() => {
+    if (!gameStarted && !gameOver) {
+      setPipes([]);
+    }
+  }, [gameStarted, gameOver, setPipes]);
 };

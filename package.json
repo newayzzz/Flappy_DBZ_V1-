@@ -5,7 +5,7 @@
   "description": "A modern Flappy Bird clone with a dragon theme built with React and TypeScript",
   "type": "module",
   "keywords": ["game", "flappy-bird", "react", "typescript", "dragon"],
-  "author": "Your Name",
+  "author": "Saqeb Newaz",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -36,10 +36,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/flappy-dragon.git"
+    "url": "https://github.com/saqebnewaz/flappy-dragon.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/flappy-dragon/issues"
+    "url": "https://github.com/saqebnewaz/flappy-dragon/issues"
   },
-  "homepage": "https://github.com/yourusername/flappy-dragon#readme"
+  "homepage": "https://github.com/saqebnewaz/flappy-dragon#readme"
 }

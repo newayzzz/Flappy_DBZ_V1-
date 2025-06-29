@@ -49,8 +49,8 @@ const FlappyGame: React.FC = () => {
   usePipeSpawner({ 
     gameStarted, 
     gameOver, 
-    spawnInterval: 1500, 
-    speed: 3, 
+    spawnInterval: 2000, // Increased interval for better spacing
+    speed: 2.5, // Slightly reduced speed for better playability
     setPipes 
   });
 
@@ -67,11 +67,16 @@ const FlappyGame: React.FC = () => {
     setGameOver(false);
     setGameStarted(false);
     setScore(0);
-    setDragonPos(300);
+    setDragonPos(gameDimensions.height / 2); // Center dragon vertically
     setDragonVelocity(0);
     setDragonRotation(0);
     setPipes([]);
     scoredPipesRef.current.clear();
+  };
+
+  const startGame = () => {
+    setGameStarted(true);
+    setDragonPos(gameDimensions.height / 2); // Center dragon when starting
   };
 
   return (
@@ -87,7 +92,7 @@ const FlappyGame: React.FC = () => {
       <PipesRenderer pipes={pipes} gameDimensions={gameDimensions} />
       
       {!gameStarted && !gameOver && (
-        <StartScreen onStart={() => setGameStarted(true)}>
+        <StartScreen onStart={startGame}>
           <ThemeToggle current={currentTheme} onChange={setCurrentTheme} />
         </StartScreen>
       )}

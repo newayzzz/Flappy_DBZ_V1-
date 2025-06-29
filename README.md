@@ -37,7 +37,7 @@ Play the game live at: [https://marvelous-sundae-87c6d6.netlify.app](https://mar
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/flappy-dragon.git
+git clone https://github.com/saqebnewaz/flappy-dragon.git
 cd flappy-dragon
 ```
 
@@ -136,4 +136,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ and React
+Made with ❤️ and React by Saqeb Newaz
